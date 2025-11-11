@@ -1,0 +1,4 @@
+/Users/aytacqeribova/Desktop/Academy.Presentation/Service/obj/Debug/net9.0/Service.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aytacqeribova/Desktop/Academy.Presentation/Service/obj/Debug/net9.0/Service.AssemblyInfoInputs.cache
+/Users/aytacqeribova/Desktop/Academy.Presentation/Service/obj/Debug/net9.0/Service.AssemblyInfo.cs
+/Users/aytacqeribova/Desktop/Academy.Presentation/Service/obj/Debug/net9.0/Service.csproj.CoreCompileInputs.cache
