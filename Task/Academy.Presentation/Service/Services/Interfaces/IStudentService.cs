@@ -13,5 +13,8 @@ namespace Service.Services.Interfaces
 
     public class Student
     {
+        public object Surname { get; set; }
+        public object Group { get; set; }
+        public object Age { get; internal set; }
     }
 }

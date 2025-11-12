@@ -72,10 +72,15 @@ namespace Service.Services.Implementations
         {
             return _groupRepository.GetAll(global => global.Name.Trim().ToLower.Equals(name.Trim(), StringComparison.CurrentCultureIgnoreCase));
         }
+
     }
 }
 
 
 internal class GroupRepository
 {
+    internal object Get(Func<object, bool> value)
+    {
+        throw new NotImplementedException();
+    }
 }
