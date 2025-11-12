@@ -3,7 +3,7 @@ using LibrarySystem.Repository.Repositories.Implementations;
 using LibrarySystem.Service.Services.Interfaces;
 namespace LibrarySystem.Service.Services.Implementations
 {
-    public class StudentService : IStudentkService
+    public class StudentService : IStudentService
     {
         private StudentRepository _studentRepository;
         private GroupRepository _groupRepository;

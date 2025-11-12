@@ -1,7 +1,4 @@
 using System.Text.RegularExpressions;
-using Academy.Presentation.Repository.Data;
-using Academy.Presentation.Repository.Exception
-using Academy.Presentation.Repository.Repositories.Interfaces;
 using Repository.Data;
 
 namespace Academy.Presentation.Repository.Repositories.Implementations
@@ -17,13 +14,17 @@ namespace Academy.Presentation.Repository.Repositories.Implementations
             }
             catch (Exception ex)
             {
-                
+
                 System.Console.WriteLine(ex.Message);
             }
         }
+        public Group GetById(Predicate<Group> predicate)
+        {
+            return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
+        }
         public void UpdateGroup(Group data)
         {
-            Group dbgroup = GetGroupById(global => global.Id == data.Id);
+            Group dbgroup = GetById(group => group.Id == data.Id);
             dbgroup.Name = data.Name;
             dbgroup.Teacher = data.Teacher;
             dbgroup.Room = data.Room;
@@ -34,9 +35,8 @@ namespace Academy.Presentation.Repository.Repositories.Implementations
         }
         public List<Group> GetAllGroups(Predicate<Group> predicate = null)
         {
-            return predicate != null ? AppDbContext<Group>.datas.FindAll(predicate) : null;
+            return predicate != null ? AppDbContext<Group>.datas.FindAll(predicate) : AppDbContext<Group>.datas;
         }
-
            public List<Group> GetAllGroupsByRoom(Predicate<Group> predicate)
         {
             throw new NotImplementedException();
@@ -46,7 +46,7 @@ namespace Academy.Presentation.Repository.Repositories.Implementations
         {
             throw new NotImplementedException();
         }
-        public Group GetAllGroupById(Predicate<Group> predicate)
+        public Group GetAllGroupsById(Predicate<Group> predicate)
         {
             return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
         }

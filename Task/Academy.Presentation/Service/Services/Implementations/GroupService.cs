@@ -13,7 +13,7 @@ namespace Service.Services.Implementations
         {
             _groupRepository = new GroupRepository();
         }
-        public Group Create(Group group)
+        public Group CreateGroup(Group group)
         {
             group.Id = _count;
             _groupRepository.Create(group);
@@ -48,19 +48,34 @@ namespace Service.Services.Implementations
 
         public Group Update(int id, Group group)
         {
-            throw new NotImplementedException();
+            Group dbgroup = GetById(id);
+            if (dbgroup is null) return null;
+            group.Id = dbgroup.Id;
+            _groupRepository.Update(group);
+            return group;
+
 
         }
         public object GetByRoom(string groupRoom)
         {
-            Group group = groupRepository.Get(g => g.Room==groupRoom);
+            Group group = _groupRepository.Get(g => g.Room == groupRoom);
             if (group is null) return null;
             return group;
         }
+
+        public Group GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Group> Search(string name)
+        {
+            return _groupRepository.GetAll(global => global.Name.Trim().ToLower.Equals(name.Trim(), StringComparison.CurrentCultureIgnoreCase));
+        }
     }
 }
-    
 
-    internal class GroupRepository
-    {
-    }
+
+internal class GroupRepository
+{
+}
