@@ -1,86 +1,111 @@
-﻿using Academy.Presentation.Helpers;
-using Academy.System.Presentation.Controller;
+﻿using AcademySystem.Controllers;
+using AcademySystem.Helpers;
 
-namespace Academy.Presentation;
-
-class Program
+namespace AcademySystem
 {
-    static void Main(string[] args)
+    public class Program
     {
-        GroupController groupController = new GroupController();
-        StudentController studentController = new StudentController();
-    
-        Helper.PrintConsole(ConsoleColor.Blue, "Select one option");
-        Helper.PrintConsole(ConsoleColor.Yellow, "1 - Create Group, /n 2 - Update Group, /n 3 - Delete Group, /n 4 - Get group  by id, /n 5 - Get all groups  by teacher , /n 6 - Get all groups by room, /n 7 - Get all groups   ,/n 8 - Create Student, /n 9 - Update Student   , /n 10- Get student  by id, /n 11 - Delete student, /n 12 - Get students by age, /n 13 - Get all students  by group id , /n 14- Search method for groups by name, /n 15 - Search method for students by name or surname");
-        
-        while (true)
+        static void Main(string[] args)
         {
-            SelectOption: string SelectOption=Console.ReadLine();
-            int TrueSelectOption;
-            bool IsSelectOption = int.TryParse(SelectOption, out TrueSelectOption);
-            if (IsSelectOption)
-            {
+            GroupController groupController = new();
+            StudentController studentController = new();
 
-                switch (TrueSelectOption)
+            Helper.PrintConsole(ConsoleColor.Blue, "Select one option!");
+            GetMenus();
+
+            while (true)
+            {
+            SelectOption:
+                string selectOption = Console.ReadLine();
+
+                if (int.TryParse(selectOption, out int selectedOption))
                 {
-                       case 1:
-                            groupController.CreateGroup();
+                    switch (selectedOption)
+                    {
+                        case (int)Menus.CreateGroup:
+                            groupController.Create();
                             break;
-                        case 2:
-                            studentController.CreateStudent();
+                        case (int)Menus.GetGroupById:
+                            groupController.GetById();
                             break;
-                        case 3:
-                            groupController.Update();
-                            break;
-                        case 4:
-                            studentController.UpdateStudent();
-                            break;
-                        case 5:
-                            groupController.Delete();
-                            break;
-                        case 6:
-                            studentController.DeleteStudent();
-                            break;
-                        case 7:
-                            groupController.GetAllByRoom();
-                            break;
-                        case 8:
-                            groupController.GetAllByTeacher();
-                            break;
-                        case 9:
+                        case (int)Menus.GetAllGroups:
                             groupController.GetAll();
                             break;
-                        case 10:
-                            studentController.GetAllStudentsByGroupId();
+                        case (int)Menus.DeleteGroup:
+                            groupController.Delete();
                             break;
-                        case 11:
-                            groupController.GetGroupById();
+                        case (int)Menus.UpdateGroup:
+                            groupController.Update();
                             break;
-                        case 12:
-                            studentController.GetStudentById();
+                        case (int)Menus.SearchGroupByName:
+                            groupController.Search();
                             break;
-                        case 13:
-                            studentController.GetStudentsByAge();
+                        case (int)Menus.GetGroupByTeacher:
+                            groupController.GetByTeacher();
                             break;
-                        case 14:
-                            groupController.SearchMethodForGroupsByName();
-                            break;
-                        case 15:
-                            studentController.SearchMethodForStudentsByNameorSurname(); 
+                        case (int)Menus.GetGroupByRoom:
+                            groupController.GetByRoom();
                             break;
 
+                        case (int)Menus.CreateStudent:
+                            studentController.Create();
+                            break;
+                        case (int)Menus.GetStudentById:
+                            studentController.GetById();
+                            break;
+                        case (int)Menus.GetStudentsByAge:
+                            studentController.GetByAge();
+                            break;
+                        case (int)Menus.GetAllStudentsByGroupId:
+                            studentController.GetAll();
+                            break;
+                        case (int)Menus.DeleteStudent:
+                            studentController.Delete();
+                            break;
+                        case (int)Menus.UpdateStudent:
+                            studentController.Update();
+                            break;
+                        case (int)Menus.SearchStudentsByNameOrSurname:
+                            studentController.Search();
+                            break;
+
+                        default:
+                            Helper.PrintConsole(ConsoleColor.Red, "Option not found! Please select a valid option.");
+                            break;
+                    }
+
+                    Helper.PrintConsole(ConsoleColor.Yellow, "\nSelect another option:");
+                    GetMenus();
                 }
-            }
-            else
-            {
-                Helper.PrintConsole(ConsoleColor.Red, "Select correct option type!");
-                goto SelectOption;
+                else
+                {
+                    Helper.PrintConsole(ConsoleColor.Red, "Select correct option type!");
+                    goto SelectOption;
+                }
             }
         }
 
+        private static void GetMenus()
+        {
+            Helper.PrintConsole(ConsoleColor.Yellow,
+                "1 - Create Group\n" +
+                "2 -Update Group \n" +
+                "3 - Delete Group\n" +
+                "4 -Get Group by Id \n" +
+                "5 -Group by Teacher \n" +
+                "6 -Get Group by Room \n" +
+                "7 -Get All Groups \n" +
+                "8 - Search Group  \n\n" +
 
-
-
-
+                "9 - Create Student\n" +
+                "10 - Update Student \n" +
+                "11 -Delete Student \n" +
+                "12 -Get Student by Id \n" +
+                "13 - Get Student by Age\n" +
+                "14 - Get All Students\n" +
+                "15 - Search Student\n"
+                );
+        }
     }
+
 }

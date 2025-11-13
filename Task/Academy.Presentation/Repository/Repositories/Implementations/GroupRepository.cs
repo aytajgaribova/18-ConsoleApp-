@@ -1,65 +1,73 @@
-using System.Text.RegularExpressions;
-using Repository.Data;
+using Domain.Entities;
 
-namespace Academy.Presentation.Repository.Repositories.Implementations
+
+using Repository.Data;
+using Repository.Exceptions;
+
+namespace Repository.Repostories.Implementations
 {
     public class GroupRepository : IRepository<Group>
     {
-        public void CreateGroup(Group data)
+        public void Create(Group data)
         {
             try
             {
-                if (data is null) throw new DllNotFoundException("Data not found!");
+                if (data == null) throw new NotFoundException("Data not found!");
+
                 AppDbContext<Group>.datas.Add(data);
             }
             catch (Exception ex)
             {
-
-                System.Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
-        public Group GetById(Predicate<Group> predicate)
-        {
-            return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
-        }
-        public void UpdateGroup(Group data)
-        {
-            Group dbgroup = GetById(group => group.Id == data.Id);
-            dbgroup.Name = data.Name;
-            dbgroup.Teacher = data.Teacher;
-            dbgroup.Room = data.Room;
-        }
-        public void DeleteGroup(Group data)
+
+        public void Delete(Group data)
         {
             AppDbContext<Group>.datas.Remove(data);
         }
-        public List<Group> GetAllGroups(Predicate<Group> predicate = null)
+
+        public Group Get(Predicate<Group> predicate)
+        {
+            return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
+        }
+
+        public List<Group> GetAll(Predicate<Group> predicate = null)
         {
             return predicate != null ? AppDbContext<Group>.datas.FindAll(predicate) : AppDbContext<Group>.datas;
         }
-           public List<Group> GetAllGroupsByRoom(Predicate<Group> predicate)
+
+        public List<Group> Search(string searchText)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(searchText))
+                return new List<Group>();
+
+            return AppDbContext<Group>.datas
+                .FindAll(g => g.Name != null && g.Name.ToLower().Contains(searchText.ToLower()));
         }
 
-        public List<Group> GetAllGroupsByTeacher(Predicate<Group> predicate)
+        public void Update(Group data)
         {
-            throw new NotImplementedException();
+            Group dbGroup = Get(l => l.Id == data.Id);
+
+            if (dbGroup == null) return;
+
+            if (!string.IsNullOrEmpty(data.Name))
+            {
+                dbGroup.Name = data.Name;
+            }
+
+            if (!string.IsNullOrEmpty(data.Teacher))
+            {
+                dbGroup.Teacher = data.Teacher;
+            }
+
+            if (!string.IsNullOrEmpty(data.Room))
+            {
+                dbGroup.Room = data.Room;
+            }
+
         }
-        public Group GetAllGroupsById(Predicate<Group> predicate)
-        {
-            return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
-        }
-
-        public Group  SearchMethodForGroupsByName(Predicate<Group> predicate)
-        {
-            return predicate != null ? AppDbContext<Group>.datas.Find(predicate) : null;
-        }
-
-
-
-
-
     }
 
     public interface IRepository<T>

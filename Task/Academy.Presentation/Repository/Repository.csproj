@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="Repository.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

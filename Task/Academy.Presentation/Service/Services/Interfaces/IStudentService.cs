@@ -1,20 +1,20 @@
+using Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Service.Services.Interfaces
 {
     public interface IStudentService
     {
-        Student CreateStudent(int groupId, Student student);
-        Student UptadeStudent(int id, Student student);
-        void DeleteStudent(int id);
-        Student GetStudentById(int id);
-        List<Student> GetStudentsByAge(int age);
-        List<Student> GetAllStudentsByGroupId(int groupId);
-        List<Student> SearchMethodForStudentsByNameorSurname(string nameorSurname);
-    }
-
-    public class Student
-    {
-        public object Surname { get; set; }
-        public object Group { get; set; }
-        public object Age { get; internal set; }
+        Student Create(Student student);
+        Student Update(int id, Student student);
+        void Delete(int id);
+        Student GetById(int id);
+        List<Student> GetByGroup(string groupName);
+        List<Student> GetAll();
+        List<Student> Search(string searchText);
     }
 }

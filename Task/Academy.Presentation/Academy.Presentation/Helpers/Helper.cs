@@ -1,6 +1,12 @@
-namespace Academy.Presentation.Helpers
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AcademySystem.Helpers
 {
-    public static class Helper
+    public class Helper
     {
         public static void PrintConsole(ConsoleColor color, string text)
         {
@@ -10,3 +16,4 @@ namespace Academy.Presentation.Helpers
         }
     }
 }
+    

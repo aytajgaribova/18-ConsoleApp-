@@ -1,7 +1,13 @@
+using Domain.Entities;
 using Repository.Data;
-using Service.Services.Interfaces;
+using Repository.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Academy.Presentation.Repository.Repositories.Implementations
+namespace Repository.Repostories.Implementations
 {
     public class StudentRepository : IRepository<Student>
     {
@@ -9,48 +15,63 @@ namespace Academy.Presentation.Repository.Repositories.Implementations
         {
             try
             {
-                if (data == null) throw new Exception("Student not found");
+                if (data == null)
+                    throw new NotFoundException("Student data not found!");
+
                 AppDbContext<Student>.datas.Add(data);
             }
             catch (Exception ex)
             {
-
-                System.Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
-        public void DeleteStudent(Student data)
+
+        public void Delete(Student data)
         {
             AppDbContext<Student>.datas.Remove(data);
         }
-        public Student GetStudent(Predicate<Student> predicate)
+
+        public Student Get(Predicate<Student> predicate)
         {
             return predicate != null ? AppDbContext<Student>.datas.Find(predicate) : null;
         }
-        public List<Student> GetAll(Predicate<Student> predicate)
-        {
 
+        public List<Student> GetAll(Predicate<Student> predicate = null)
+        {
             return predicate != null ? AppDbContext<Student>.datas.FindAll(predicate) : AppDbContext<Student>.datas;
         }
+
+        public List<Student> Search(string searchText)
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+                return new List<Student>();
+
+            return AppDbContext<Student>.datas
+                  .FindAll(s =>
+            (!string.IsNullOrEmpty(s.Name) && s.Name.Trim().ToLower() == searchText.Trim().ToLower()) ||
+            (!string.IsNullOrEmpty(s.Surname) && s.Surname.Trim().ToLower() == searchText.Trim().ToLower())
+        );
+        }
+
         public void Update(Student data)
         {
-            Student student = Get(s => s.Id == data.Id);
-            if (student == null) return;
-            if (!string.IsNullOrEmpty(student.Name))
-            {
-                student.Name = data.Name;
-            }
-            if (!string.IsNullOrEmpty(student.SurName))
-            {
-                student.Surname = data.Surname;
-            }
+            Student dbStudent = Get(s => s.Id == data.Id);
+
+            if (dbStudent == null) return;
+
+            if (!string.IsNullOrEmpty(data.Name))
+                dbStudent.Name = data.Name;
+
+            if (!string.IsNullOrEmpty(data.Surname))
+                dbStudent.Surname = data.Surname;
+
             if (data.Age > 0)
-            {
-                student.Age = data.Age;
-            }
+                dbStudent.Age = data.Age;
+
             if (data.Group != null)
-            {
-                student.Group=data.Group;
-            }
+                dbStudent.Group = data.Group;
         }
     }
 }
+
+            
