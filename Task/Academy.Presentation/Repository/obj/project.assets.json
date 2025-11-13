@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "Service/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Service.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Service.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Service/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
-      "path": "../Service/Service.csproj",
-      "msbuildProject": "../Service/Service.csproj"
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Service >= 1.0.0"
+      "Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aytacqeribova/Desktop/Academy.Presentation/Repository/Repository.csproj",
+      "projectUniqueName": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "/Users/aytacqeribova/Desktop/Academy.Presentation/Repository/Repository.csproj",
+      "projectPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/Repository.csproj",
       "packagesPath": "/Users/aytacqeribova/.nuget/packages/",
-      "outputPath": "/Users/aytacqeribova/Desktop/Academy.Presentation/Repository/obj/",
+      "outputPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/aytacqeribova/.nuget/NuGet/NuGet.Config"
@@ -51,8 +51,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/aytacqeribova/Desktop/Academy.Presentation/Service/Service.csproj": {
-              "projectPath": "/Users/aytacqeribova/Desktop/Academy.Presentation/Service/Service.csproj"
+            "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/Domain.csproj": {
+              "projectPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/Domain.csproj"
             }
           }
         }

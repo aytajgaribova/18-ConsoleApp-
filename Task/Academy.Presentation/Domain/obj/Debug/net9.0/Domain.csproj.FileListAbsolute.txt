@@ -1,0 +1,12 @@
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/bin/Debug/net9.0/Domain.deps.json
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/bin/Debug/net9.0/Domain.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/bin/Debug/net9.0/Domain.pdb
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.sourcelink.json
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/refint/Domain.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/Domain.pdb
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/obj/Debug/net9.0/ref/Domain.dll

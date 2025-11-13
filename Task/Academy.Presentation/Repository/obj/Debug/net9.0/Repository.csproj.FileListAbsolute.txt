@@ -1,0 +1,16 @@
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/bin/Debug/net9.0/Repository.deps.json
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/bin/Debug/net9.0/Repository.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/bin/Debug/net9.0/Repository.pdb
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/bin/Debug/net9.0/Domain.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/bin/Debug/net9.0/Domain.pdb
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.csproj.AssemblyReference.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.AssemblyInfoInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.AssemblyInfo.cs
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.csproj.CoreCompileInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.sourcelink.json
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.csproj.Up2Date
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/refint/Repository.dll
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/Repository.pdb
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/obj/Debug/net9.0/ref/Repository.dll

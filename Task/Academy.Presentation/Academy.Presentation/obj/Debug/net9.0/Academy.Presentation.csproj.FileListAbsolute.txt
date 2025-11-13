@@ -1,0 +1,6 @@
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.csproj.AssemblyReference.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.AssemblyInfoInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.AssemblyInfo.cs
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.csproj.CoreCompileInputs.cache
+/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Academy.Presentation/obj/Debug/net9.0/Academy.Presentation.sourcelink.json

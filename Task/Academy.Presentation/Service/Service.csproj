@@ -3,8 +3,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
-    <ProjectReference Include="Service.csproj" />
-    <ProjectReference Include="..\Academy.Presentation\Academy.Presentation.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

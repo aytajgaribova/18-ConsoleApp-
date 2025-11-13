@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "Domain >= 1.0.0",
+      "Repository >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/aytacqeribova/.nuget/packages/": {}
@@ -13,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aytacqeribova/Desktop/Academy.Presentation/Service/Service.csproj",
+      "projectUniqueName": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Service/Service.csproj",
       "projectName": "Service",
-      "projectPath": "/Users/aytacqeribova/Desktop/Academy.Presentation/Service/Service.csproj",
+      "projectPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Service/Service.csproj",
       "packagesPath": "/Users/aytacqeribova/.nuget/packages/",
-      "outputPath": "/Users/aytacqeribova/Desktop/Academy.Presentation/Service/obj/",
+      "outputPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/aytacqeribova/.nuget/NuGet/NuGet.Config"
@@ -31,7 +69,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/Domain.csproj": {
+              "projectPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Domain/Domain.csproj"
+            },
+            "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/Repository.csproj": {
+              "projectPath": "/Users/aytacqeribova/Desktop/18-ConsoleApp-/Task/Academy.Presentation/Repository/Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
